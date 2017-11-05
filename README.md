@@ -14,8 +14,17 @@ Cuz i have no idea how to deal with cmake dependencies.
 ```
 $ git submodule add git@github.com:mbIkola/cmake-include.git ./cmake
 ```
+2. Add few lines to your root CMakeLists.txt:
 
-2. Use one of scenarios/functions in your project. Example usage for google-test (file test/CMakeLists.txt)
+```
+ set(CMAKE_MODULE_PATH
+         ${CMAKE_MODULE_PATH}
+         ${PROJECT_SOURCE_DIR}/cmake
+ )                                                                                                                                                                                                                                                                                                                        
+            
+```
+
+3. Use one of scenarios/functions in your project. Example usage for google-test (file test/CMakeLists.txt)
 
 ```
 include(DownloadProject)
